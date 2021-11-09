@@ -1,0 +1,332 @@
+@import "./_variable.scss"
+@import "./_rwd.sass"
+
+
+html, body
+  height: 100%
+
+html, body, *
+  font-family: -apple-system, 'Roboto', 'Noto Sans TC', sans-serif
+  font-size: 14px
+  font-weight: 400
+  scroll-behavior: smooth
+  transition: all 0.05s
+  @include pad-width
+    font-size: 12px
+
+body
+  @include background-color('bg-color')
+  @include color('text-color')
+
+mark
+  @include background-color('mark')
+  border-radius: 8px
+  padding: 2px 0
+  margin: 0 2px
+  &.mark-type
+    @include background-color('mark-type')
+  &.mark-cost
+    @include background-color('mark-cost')
+  &.mark-feature
+    @include background-color('mark-feature')
+  &.mark-stock
+    @include background-color('mark-stock')
+  &.mark-card
+    @include background-color('mark-card')
+  &.mark-extra
+    @include background-color('mark-extra')
+
+a
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+// fix
+.text-primary
+  @include color('text-primary-color')
+.text-muted
+  @include color('text-mute-color')
+.text-dark
+  @include color('text-dark-color')
+.w-fit
+  width: fit-content !important
+.h-0
+  height: 0 !important
+.form-control, .custom-select, .input-group-text
+  @include background-color('form-bg-color')
+  @include color('form-text-color')
+  @include border-color('form-border-color')
+
+
+.border-top
+  @include border-color('border-color')
+.border-bottom
+  @include border-color('border-color')
+
+.w-sm-fit
+  @include pad-width
+    width: fit-content !important
+  @include pc-width
+    width: fit-content !important
+  @include big-pc-width
+    width: fit-content !important
+
+.bg-white
+  @include background-color('bg-white')
+.bg-gray
+  @include background-color('bg-gray')
+.bg-blue
+  @include background-color('bg-blue')
+.bg-red
+  @include background-color('bg-red')
+.bg-none
+  background: none
+.bg-default
+  @include background-color('bg-default')
+.bg-blur
+  @include background-color('bg-blur')
+  backdrop-filter: blur(20px)
+.space-pre-line
+  white-space: pre-line
+
+.bg-img
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+
+.bg-gradient-bottom
+  @include background('bg-gradient')
+
+
+.cursor-pointer
+  cursor: pointer !important
+.cursor-all-scroll
+  cursor: all-scroll !important
+
+.opacity-0
+  opacity: 0 !important
+
+.t-0
+  top: 0 !important
+.r-0
+  right: 0 !important
+.b-0
+  bottom: 0 !important
+.l-0
+  left: 0 !important
+
+.h-100vh
+  height: 100vh !important
+.w-100vw
+  width: 100vw !important
+.rotate-l-90
+  transform: rotate(-90deg)
+.rotate-r-90
+  transform: rotate(90deg)
+.rounded-my
+  border-radius: 10px !important
+
+.rounded-my-top
+  border-top-left-radius: 10px !important
+  border-top-right-radius: 10px !important
+.rounded-my-right
+  border-top-right-radius: 10px !important
+  border-bottom-right-radius: 10px !important
+.rounded-my-bottom
+  border-bottom-left-radius: 10px !important
+  border-bottom-right-radius: 10px !important
+.rounded-my-left
+  border-top-left-radius: 10px !important
+  border-bottom-left-radius: 10px !important
+
+.table
+  @include color('text-color')
+
+.btn-light
+  @include background-color('btn-light-color')
+  @include border-color('btn-light-color')
+  @include color('btn-light-text-color')
+
+.close
+  @include color('modal-close-color')
+.modal-gray
+  @include background-color('modal-gray-color')
+.modal-content:not(.bg-none)
+  @include background-color('modal-color')
+  .modal-header, .modal-footer
+    @include border-color('border-color')
+
+.deck-code
+  @include background-color('deck-code-color')
+
+.btn-icon
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: .5rem
+  overflow-x: hidden
+  i
+    width: 1.2rem !important
+    height: 1.2rem !important
+    font-size: 1.2rem !important
+
+.label-icon-sm
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 1.75rem
+  height: 1.75rem
+  padding: 0
+  overflow-x: hidden
+  i
+    width: 1rem !important
+    height: 1rem !important
+    font-size: 1rem !important
+
+.btn-icon-sm
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 5px
+  overflow-x: hidden
+  i
+    width: 1rem !important
+    height: 1rem !important
+    font-size: 1rem !important
+
+// transition-group animate
+
+.cards-enter
+  transform: scale(0.5) translatey(-80px)
+  opacity: 0
+
+.cards-leave-to
+  transform: translatey(30px)
+  opacity: 0
+
+.cards-leave-active
+  opacity: 0
+  position: absolute
+  z-index: -1
+
+.animate
+  transition: all .2s ease-in-out
+
+.cards-move
+  transition: all .2s ease-in-out
+
+/* width */
+// ::-webkit-scrollbar
+//   width: 8px
+
+::placeholder
+  @include color('form-text-color')
+  opacity: 1
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #00000000
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #88888888
+  border-radius: 10px
+  scroll-behavior: smooth
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #55555588
+
+
+.fb_dialog.fb_dialog_advanced
+  z-index: 100 !important
+.fb_dialog.fb_dialog_mobile
+  z-index: 100 !important
+
+// fix overflow bug
+// .overflow-auto, .overflow-scroll,
+// .overflow-x-auto, .overflow-x-scroll,
+// .overflow-y-auto, .overflow-y-scroll,
+//   -webkit-overflow-scrolling: touch
+
+.overflow-x-auto
+  overflow-x: auto
+
+.overflow-y-auto
+  overflow-y: auto
+
+
+.overflow-x-hidden
+  overflow-x: hidden !important
+
+.overflow-y-hidden
+  overflow-y: hidden !important
+
+
+.page-content
+  width: 850px
+  margin: 0 auto
+  @include phone-width
+    width: 100%
+    padding: 1rem
+  @include small-pad-width
+    width: 100%
+    padding: 1rem
+
+.page-content-lg
+  width: 1100px
+  margin: 0 auto
+  @include phone-width
+    width: 100%
+    padding: 1rem
+  @include small-pad-width
+    width: 100%
+    padding: 1rem
+
+.swal2-content,
+.swal2-header
+  padding: 0 !important
+
+.cover1
+  order: 2
+  position: relative
+  z-index: 10
+.cover2
+  order: 1
+  opacity: 0.8
+  transform: scale(0.8) translate(20px, 10px) rotate(-20deg)
+.cover3
+  order: 3
+  opacity: 0.8
+  transform: scale(0.8) translate(-20px, 10px) rotate(20deg)
+
+
+@keyframes placeHolderShimmer
+  0%
+    background-position: 0 0
+
+  100%
+    background-position: 100px 0
+
+.isLoading
+  animation-duration: 1.25s
+  animation-fill-mode: forwards
+  animation-iteration-count: infinite
+  animation-name: placeHolderShimmer
+  animation-timing-function: linear
+  @include normal-background('bg-loading')
+  background-size: 100% 100%
+  position: relative
+  border-radius: 10px !important
+
+
+.btn-no-hover
+  &.btn-outline-success:hover
+    background-color: inherit
+    color: #28a745
+    border-color: #28a745
+
+  &.btn-outline-danger:hover
+    background-color: inherit
+    color: #dc3545
+    border-color: #dc3545

@@ -1,0 +1,214 @@
+$mark: orange;
+$mark-type: #99e4ff88;
+$mark-cost: #ffc2be88;
+$mark-feature: #cebf9788;
+$mark-stock: #edf58188;
+$mark-card: #81f59188;
+$mark-extra: #e1dd9e88;
+
+$text-color: #212529;
+$text-mute-color: #6c757d;
+$text-dark-color: #343a40;
+$text-nav-color: #555;
+$text-nav-color-active: #32c9ff;
+$card-color: #ffffff;
+
+$form-bg-color: #ffffff;
+$form-text-color: #495057;
+$form-border-color: #ced4da;
+
+$bg-color: #e5e5e5;
+$bg-white: white;
+$bg-gray: #e2e2e2;
+$bg-blue: #286fcd;
+$bg-red: #ff7873;
+$bg-default: #e5e5e5;
+
+$btn-light-color: #f8f9fa;
+$btn-light-text-color: #212529;
+
+
+//當HTML的data-theme為dark時，樣式引用dark
+//data-theme為其他值時，就採用組件庫的默認樣式
+//這裡我只定義了兩套主題方案，想要再多隻需在`$themes`里加就行了
+//注意一點是，每套配色方案裡的key可以自定義但必須一致，不然就會混亂
+$themes: (
+  light: (
+    bg-loading: linear-gradient(85deg, #eeeeee 5%, #dddddd 30%, #eeeeee 55%),
+    mark: orange,
+    mark-type: #99e4ff88,
+    mark-cost: #ffc2be88,
+    mark-feature: #cebf9788,
+    mark-stock: #edf58188,
+    mark-card: #81f59188,
+    mark-extra: #e1dd9e88,
+
+    text-color: #212529,
+    text-primary-color: #007bff,
+    text-mute-color: #6c757d,
+    text-dark-color: #343a40,
+    text-nav-color: #555,
+    text-nav-color-active: #32c9ff,
+    card-color: #ffffff,
+
+    form-bg-color: #ffffff,
+    form-text-color: #495057,
+    form-border-color: #ced4da,
+    border-color: #dee2e6,
+    btn-focus-color: #6c757d,
+    topic-color: #32c9ff88,
+    topic-active-color: #32c9ff,
+    topic-text-color: #6c757d,
+
+    bg-color: #e5e5e5,
+    bg-white: white,
+    bg-gray: #e2e2e2,
+    bg-blue: #286fcd,
+    bg-red: #ff7873,
+    bg-default: #e5e5e5,
+    bg-blur: #e5e5e5aa,
+    bg-gradient: linear-gradient(0deg, white 0%, #ffffffEE 20%, #ffffff00 70%),
+
+    card-blue: #a6c8f5,
+    card-red: #fdc6c4,
+    card-yellow: #ffe500,
+    card-green: #81f591,
+
+    qa-q-gradient: linear-gradient(135deg, rgba(158,222,251,0.55) 3%, rgba(199,246,255,0.55) 31%, rgba(102,222,255,45) 97%),
+    qa-a-gradient: linear-gradient(135deg, rgba(251,158,158,0.55) 3%, rgba(255,202,199,0.55) 31%, rgba(255,102,102,45) 97%),
+    qa-q: rgba(199,246,255,0.55),
+    qa-a: rgba(255,202,199,0.55),
+
+    btn-light-color: #f8f9fa,
+    btn-light-text-color: #212529,
+    btn-filter-disable-color: #dc3545,
+
+    card-hover: #4db5ff33,
+    card-empty-color: #d4d4d4,
+    card-enable-color: #4db5ff,
+    card-disable-color: #ff7d31,
+    deck-code-color: #f8f9fa,
+    series-link-color: #32c9ff33,
+    series-link-active-color: #38c8ff,
+    series-mask: #ffffff33,
+
+    modal-color: #ffffff,
+    modal-close-color: #000000,
+    modal-gray-color: #f5f5f5,
+  ),
+  dark: (
+    bg-loading: linear-gradient(85deg, #565a5a 5%, #616161 30%, #565a5a 55%),
+    mark: orange,
+    mark-type: #99e4ff,
+    mark-cost: #ffc2be,
+    mark-feature: #cebf97,
+    mark-stock: #edf581,
+    mark-card: #81f591,
+    mark-extra: #e1dd9e,
+
+    text-color: #ffffff,
+    text-primary-color: #1e8bff,
+    text-mute-color: #aec8cf,
+    text-dark-color: #ffffff,
+    text-nav-color: #e3e3e3,
+    text-nav-color-active: #32c9ff,
+    card-color: #393939,
+
+    form-bg-color: #34343a,
+    form-text-color: #ffffff,
+    form-border-color: #798188,
+    border-color: #576675,
+    btn-focus-color: #32c9ff,
+    topic-color: #a6e7ff,
+    topic-active-color: #32c9ff,
+    topic-text-color: #212529,
+
+    bg-color: #1c1e22,
+    bg-white: #393939,
+    bg-gray: #4e4e4e,
+    bg-blue: #286fcd,
+    bg-red: #ff7873,
+    bg-default: #1c1e22,
+    bg-blur: #1c1e22aa,
+    bg-gradient: linear-gradient(0deg, #393939 0%, #393939EE 20%, #39393900 70%),
+
+    card-blue: #286fcd,
+    card-red: #ff7873,
+    card-yellow: #9c7d15,
+    card-green: #509c5a,
+
+    qa-q-gradient: linear-gradient(135deg, rgba(92,165,228,0.78) 3%, #81baffe8 31%, #66aaff 97%),
+    qa-a-gradient: linear-gradient(135deg, rgba(255,143,143,0.78) 3%, rgba(251,185,181,0.64) 31%, #ff6666 97%),
+    qa-q: #3169ade8,
+    qa-a: #934b56e8,
+
+    btn-light-color: #414c57,
+    btn-light-text-color: #cedff0,
+    btn-filter-disable-color: #ff7873,
+
+    card-hover: #ffffff11,
+    card-empty-color: #636363,
+    card-enable-color: #57b9ff,
+    card-disable-color: #ff8c4a,
+    deck-code-color: #272727,
+    series-link-color: #008abc5c,
+    series-link-active-color: #038ba7,
+    series-mask: #00000033,
+
+    modal-color: #393939,
+    modal-close-color: #ffffff,
+    modal-gray-color: #272727,
+  )
+);
+
+
+//遍歷主題map
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    //!global 把局部變量強升為全局變量
+    $theme-map: $theme-map !global;
+    //判斷html的data-theme的屬性值  #{}是sass的插值表達式
+    //& sass嵌套裡的父容器標識   @content是混合器插槽，像vue的slot
+    [data-theme="#{$theme-name}"] & {
+      @content;
+    }
+  }
+}
+
+//聲明一個根據Key獲取顏色的function
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+//獲取背景顏色
+@mixin background-color($color) {
+  @include themeify {
+    background-color: themed($color) !important;
+  }
+}
+
+//獲取背景顏色
+@mixin background($color) {
+  @include themeify {
+    background: themed($color) !important;
+  }
+}
+
+@mixin normal-background($color) {
+  @include themeify {
+    background: themed($color);
+  }
+}
+
+//獲取字體顏色
+@mixin color($color) {
+  @include themeify {
+    color: themed($color) !important;
+  }
+}
+//獲取邊框顏色
+@mixin border-color($color) {
+  @include themeify {
+    border-color: themed($color) !important;
+  }
+}
