@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import styles from '../styles/card.module.sass'
 interface CardProps {
   title: string
@@ -25,14 +26,15 @@ export class Card extends React.Component<CardProps, CardState> {
     ]
     return (
       <div className={styles.card}>
-        <div
-          style={{
-            backgroundImage: `url(${this.props.cover})`,
-            backgroundPosition: 'center center',
-          }}
-          className={styles.cover}
-        />
-
+        <div className={styles.cover}>
+          <Image
+            src={this.props.cover}
+            alt={this.props.title}
+            layout='fill'
+            objectFit='cover'
+            priority
+          />
+        </div>
         <div className={styles.cardContent}>
           <p className=''>{this.props.title}</p>
           <div className={styles.infoContainer}>

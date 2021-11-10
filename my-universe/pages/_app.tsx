@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { applyMiddleware, createStore } from 'redux'
 import bottleNekoApp from '../reducers'
+import https from 'https'
 
 let store = createStore(bottleNekoApp, applyMiddleware(thunkMiddleware))
 
