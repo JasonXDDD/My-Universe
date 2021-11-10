@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
-import { selectSeries, updateSeries, initSeries } from '../actions'
+import { initSeries, initSeriesCard } from '../actions/series'
 import { useSelector, useDispatch } from 'react-redux'
-import { Card } from '../components/card'
+import { Series } from '../components/series'
 
-const Series = () => {
+const SeriesContainer = () => {
   const [init, setInit] = useState(null)
   const series = useSelector(state => state.series.series)
   const select = useSelector(state => state.series.select)
   const dispatch = useDispatch()
 
-  const doSelectSeries = name => {
-    dispatch(selectSeries(name))
+  const doSelectSeries = series => {
+    dispatch(initSeriesCard(series))
   }
 
   useEffect(() => {
@@ -23,17 +23,15 @@ const Series = () => {
     <>
       {select ? select.series : ''}
       {series.map(e => (
-        <Card
+        <Series
           key={e.series}
-          title={e.series}
-          description={e.code.join(',')}
-          cover='XXXXX'
-          isSelect={e.series === select}
-          onSeriesClick={doSelectSeries}
+          name={e.series}
+          code={e.code}
+          onSeriesClick={() => doSelectSeries(e)}
         />
       ))}
     </>
   )
 }
 
-export default Series
+export default SeriesContainer

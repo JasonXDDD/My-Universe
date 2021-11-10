@@ -1,7 +1,8 @@
 import { NextPage } from 'next'
 import styles from '../styles/home.module.sass'
 import { Parallax } from 'react-scroll-parallax'
-import Series from '../containers/series'
+import SeriesContainer from '../containers/seriesContainer'
+import CardContainer from '../containers/cardContainer'
 import { useState, useEffect } from 'react'
 
 const Home: NextPage = () => {
@@ -12,13 +13,16 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <div className={styles.space}>???????{serverUrl}</div>
-      <Parallax y={[-120, 120]} x={[0, '80%']}>
+      {/* <div>???????{serverUrl}</div> */}
+      {/* <Parallax y={[-120, 120]} x={[0, '80%']}>
         <img src='/vercel.svg' />
-      </Parallax>
-      <div className={styles.space}>
+      </Parallax> */}
+      <div className={styles.content}>
+        <div className={styles.seriesContainer}>
+          <SeriesContainer />
+        </div>
         <div className={styles.cardContainer}>
-          <Series />
+          <CardContainer />
         </div>
       </div>
     </div>

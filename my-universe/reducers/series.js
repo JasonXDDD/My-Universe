@@ -3,7 +3,8 @@ import * as _ from 'lodash'
 
 const init = {
   series: [],
-  select: false
+  select: false,
+  cards: []
 }
 
 const selectSeries = (series = [], seriesName) => {
@@ -20,6 +21,10 @@ const series = (state = init, action) => {
 
     case actionType.SERIES.SELECT:
       tmpState.select = selectSeries(tmpState.series, action.name)
+      return tmpState
+
+    case actionType.SERIES.CARD:
+      tmpState.cards = action.cards
       return tmpState
 
     default:
