@@ -28,8 +28,8 @@ export const updateSeriesCard = (cards) => {
 export const initSeries = () => {
   return async (dispatch) => {
     const data = await getSeries()
-    console.log(data)
     dispatch(updateSeries(data))
+    return data
   }
 }
 
@@ -37,13 +37,12 @@ export const initSeriesCard = (series) => {
   return async (dispatch) => {
     dispatch(selectSeries(series.series))
     const data = await getSeriesCard(series.code)
-    console.log(data)
     dispatch(updateSeriesCard(data))
   }
 }
 
 // AJAX
-const getSeries = async () => {
+export const getSeries = async () => {
   const res = await fetchData(api.series)
   return res || []
 }

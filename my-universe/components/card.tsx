@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '../styles/card.module.sass'
 interface CardProps {
+  cardId: string
   title: string
   cover: string
   cost: number
@@ -36,10 +37,11 @@ export class Card extends React.Component<CardProps, CardState> {
           />
         </div>
         <div className={styles.cardContent}>
-          <p className=''>{this.props.title}</p>
+          <p>{this.props.title}</p>
+          <small>{this.props.cardId}</small>
           <div className={styles.infoContainer}>
             {info.map(e => (
-              <div className={styles.info}>
+              <div key={e.name} className={styles.info}>
                 <span className={styles.infoTitle}>{e.name}</span>
                 {e.value}
               </div>
