@@ -1,18 +1,29 @@
-import { NextPage, GetStaticProps } from 'next'
 import styles from '../styles/home.module.sass'
-import { Parallax } from 'react-scroll-parallax'
 import SeriesContainer from '../containers/seriesContainer'
 import CardContainer from '../containers/cardContainer'
 import { useState, useEffect } from 'react'
 import wrapper from '../reducers'
-import { initSeries } from '../actions/series'
+import { initSeries, initSeriesCard, getSeries } from '../actions/series'
 
-export const getStaticProps = wrapper.getStaticProps(store => async () => {
-  await store.dispatch(initSeries())
-})
+export const getStaticProps = wrapper.getStaticProps(
+  store => async ({ params }) => {
+    const res = await store.dispatch(initSeries())
+    // let targetSeries = res.filter(e => e.id === Number(params.id))
+    // if (targetSeries.length > 0) {
+    //   await store.dispatch(initSeriesCard(targetSeries[0]))
+    // } else {
+    //   return {
+    //     redirect: {
+    //       destination: '/1',
+    //     },
+    //   }
+    // }
+  }
+)
 
 const Home = () => {
   const [serverUrl, setServerUrl] = useState('')
+
   useEffect(() => {
     setServerUrl(process.env.NEXT_PUBLIC_SERVER_URL || '')
   }, [serverUrl])
@@ -27,7 +38,7 @@ const Home = () => {
         <div className={styles.seriesContainer}>
           <SeriesContainer />
         </div>
-        <div className={styles.cardContainer}>
+        <div id='all' className={styles.cardContainer}>
           <CardContainer />
         </div>
       </div>

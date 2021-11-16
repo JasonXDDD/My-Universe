@@ -1,17 +1,17 @@
-import { NextPage, GetStaticProps } from 'next'
 import styles from '../styles/home.module.sass'
-import { Parallax } from 'react-scroll-parallax'
 import SeriesContainer from '../containers/seriesContainer'
 import CardContainer from '../containers/cardContainer'
 import { useState, useEffect } from 'react'
 import wrapper from '../reducers'
 import { initSeries, initSeriesCard, getSeries } from '../actions/series'
+import useSWR from 'swr'
+const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export const getStaticPaths = async () => {
   const res = await getSeries()
   return {
     paths: res.map(e => ({ params: { id: `${e.id}` } })),
-    fallback: 'blocking',
+    fallback: true,
   }
 }
 
@@ -47,7 +47,7 @@ const Home = () => {
         <div className={styles.seriesContainer}>
           <SeriesContainer />
         </div>
-        <div className={styles.cardContainer}>
+        <div id='all' className={styles.cardContainer}>
           <CardContainer />
         </div>
       </div>

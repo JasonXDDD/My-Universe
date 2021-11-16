@@ -6,19 +6,20 @@ interface SeriesProps {
   name: string
   code: string[]
   id: number
+  doSelect: () => void
 }
 
 interface SeriesState {}
 
-export class Series extends React.Component<SeriesProps, SeriesState> {
+export class Series extends React.PureComponent<SeriesProps, SeriesState> {
   render () {
     return (
-      <Link href={`/${this.props.id}`} passHref>
-        <a className={styles.series}>
-          <h3>{this.props.name}</h3>
-          <p>{this.props.code.join(', ')}</p>
-        </a>
-      </Link>
+      // <Link href={`/${this.props.id}`} passHref>
+      <div className={styles.series} onClick={this.props.doSelect}>
+        <h3>{this.props.name}</h3>
+        <p>{this.props.code.join(', ')}</p>
+      </div>
+      // </Link>
     )
   }
 }

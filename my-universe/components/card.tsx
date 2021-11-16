@@ -11,11 +11,12 @@ interface CardProps {
   soul: number
   type: string
   rare: string
+  isShow: boolean
 }
 
 interface CardState {}
 
-export class Card extends React.Component<CardProps, CardState> {
+export class Card extends React.PureComponent<CardProps, CardState> {
   render () {
     const info = [
       { name: '類別', value: this.props.type },
@@ -26,7 +27,7 @@ export class Card extends React.Component<CardProps, CardState> {
       { name: '攻擊', value: this.props.attack },
     ]
     return (
-      <div className={styles.card}>
+      <div className={`${styles.card} ${this.props.isShow ? '' : styles.hide}`}>
         <div className={styles.cover}>
           <Image
             src={this.props.cover}
