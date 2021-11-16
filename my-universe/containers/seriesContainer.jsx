@@ -3,8 +3,6 @@ import { initSeries, initSeriesCard } from '../actions/series'
 import { useSelector, useDispatch } from 'react-redux'
 import { Series } from '../components/series'
 import wrapper from '../reducers'
-import useSWR from 'swr'
-const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const SeriesContainer = () => {
   const dispatch = useDispatch()

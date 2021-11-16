@@ -2,6 +2,7 @@ import '../styles/global.sass'
 import { AppProps } from 'next/app'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import wrapper from '../reducers'
+import { SWRConfig } from 'swr'
 import NextNProgress from 'nextjs-progressbar'
 
 function MyApp ({ Component, pageProps }: AppProps) {
@@ -14,9 +15,17 @@ function MyApp ({ Component, pageProps }: AppProps) {
         height={5}
         showOnShallow={true}
       />
-      <ParallaxProvider>
-        <Component {...pageProps} />
-      </ParallaxProvider>
+      <SWRConfig
+        value={{
+          // refreshInterval: 3000,
+          fetcher: (resource, init) =>
+            fetch(resource, init).then(res => res.json()),
+        }}
+      >
+        <ParallaxProvider>
+          <Component {...pageProps} />
+        </ParallaxProvider>
+      </SWRConfig>
     </>
   )
 }

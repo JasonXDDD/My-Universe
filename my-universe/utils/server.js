@@ -6,13 +6,17 @@ export const api = {
   card: `${serverUrl}/card`
 }
 
+export const genURL = (url, params) => {
+  let urlBuilder = new URL(url)
+  let paramsBuilder = new URLSearchParams(params || null)
+  urlBuilder.search = paramsBuilder
+  return urlBuilder.href
+}
+
 const fetchData = async (url, { method, params, body } = {}) => {
   try {
-    let urlBuilder = new URL(url)
-    let paramsBuilder = new URLSearchParams(params || null)
-    urlBuilder.search = paramsBuilder
-
-    const res = await fetch(urlBuilder.href, {
+    let url = genURL(url, params)
+    const res = await fetch(url, {
       method,
       body
     })
@@ -29,6 +33,8 @@ const fetchData = async (url, { method, params, body } = {}) => {
     return false
   }
 }
+
+
 
 
 export default fetchData

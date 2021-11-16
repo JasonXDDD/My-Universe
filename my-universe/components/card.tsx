@@ -35,6 +35,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
             layout='fill'
             objectFit='cover'
             priority
+            // placeholder='blur'
           />
         </div>
         <div className={styles.cardContent}>

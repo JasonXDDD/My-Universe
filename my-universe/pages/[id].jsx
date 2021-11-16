@@ -4,8 +4,6 @@ import CardContainer from '../containers/cardContainer'
 import { useState, useEffect } from 'react'
 import wrapper from '../reducers'
 import { initSeries, initSeriesCard, getSeries } from '../actions/series'
-import useSWR from 'swr'
-const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export const getStaticPaths = async () => {
   const res = await getSeries()
