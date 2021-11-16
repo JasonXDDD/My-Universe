@@ -39,13 +39,14 @@ const SeriesContainer = ({ doSeries }) => {
   ))
 }
 
-const COLUMN_NUM = 6
+const COLUMN_WIDTH = 180
 
 const CardItem = ({ columnIndex, data, rowIndex, style }) => {
-  let id = rowIndex * COLUMN_NUM + columnIndex
-  const item = data[id % data.length]
+  console.log(rowIndex, data[1])
+  let id = rowIndex * data[1] + columnIndex
 
-  if (id < data.length) {
+  if (id < data[0].length) {
+    const item = data[0][id]
     return (
       <div style={style}>
         <Suspense fallback={<div>Loading...</div>}>
@@ -74,20 +75,23 @@ const CardContainer = ({ series }) => {
   const { data } = useCard(series.code)
   return (
     <AutoSizer>
-      {({ height, width }) => (
-        <Grid
-          columnCount={COLUMN_NUM}
-          columnWidth={180}
-          height={height}
-          rowCount={Math.ceil(data.length / COLUMN_NUM)}
-          rowHeight={380}
-          width={width}
-          itemData={data}
-          // className={styles.cardContainer}
-        >
-          {CardItem}
-        </Grid>
-      )}
+      {({ height, width }) => {
+        const colNum = Math.floor(width / COLUMN_WIDTH)
+        return (
+          <Grid
+            columnCount={colNum}
+            columnWidth={COLUMN_WIDTH}
+            height={height}
+            rowCount={Math.ceil(data.length / colNum)}
+            rowHeight={380}
+            width={width}
+            itemData={[data, colNum]}
+            // className={styles.cardContainer}
+          >
+            {CardItem}
+          </Grid>
+        )
+      }}
     </AutoSizer>
   )
 }
