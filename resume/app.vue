@@ -4,8 +4,8 @@
       <Cover
         class="
           md:h-screen md:col-span-2 md:sticky md:top-0
-          m-4
-          md:mr-0 md:my-4 md:ml-4
+          p-4
+          md:pr-0 md:py-4 md:pl-4
         "
       />
       <Content class="m-4 md:col-span-3" />

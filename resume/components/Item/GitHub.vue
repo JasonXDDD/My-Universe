@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h2 class="text-2xl font-black mb-4">GitHub Contributions</h2>
+    <h2 class="title">GitHub Contributions</h2>
     <div class="calendar !min-h-0 !border-0" />
   </div>
 </template>

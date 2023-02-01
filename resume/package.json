@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "github-calendar": "^2.3.2",
+    "moment": "^2.29.4",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0"
   }
