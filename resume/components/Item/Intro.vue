@@ -1,6 +1,6 @@
 <template>
-  <div class="flex gap-2">
-    <div class="grow flex flex-col gap-2">
+  <div class="flex gap-2 flex-col md:flex-row">
+    <div class="grow flex flex-col gap-4">
       <h2 class="title">
         我是劉冠林<br />
         你可以叫我 罐罐 / Lawry / JasonXDDD
@@ -11,7 +11,7 @@
         <p>{{ item.description }}</p>
       </div>
     </div>
-    <div class="bg-red-200 rounded-2xl flex-none w-80 h-80" />
+    <img src="/images/head.jpeg" alt="" class="rounded-2xl flex-none" />
   </div>
 </template>
 
