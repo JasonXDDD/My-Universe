@@ -25,8 +25,9 @@
     </div>
 
     <ItemWork
-      v-for="({ cover, title, description, link, size }, workid) in works"
+      v-for="({ icon, cover, title, description, link, size }, workid) in works"
       :key="`work-${workid}`"
+      :icon="icon"
       :cover="cover"
       :title="title"
       :description="description"
@@ -44,6 +45,7 @@ const works = ref([
   {
     // cover: '/images/myproguide.png',
     title: 'MyProGuide',
+    icon: '/images/logo/myproguide.png',
     description: `
 技術負責人 2017-05 - 2019-08
 一家作為導遊訓練及派遣的新創公司，主要負責所有系統及平台建置，包括電商網站、ERP、導遊平台... 等等。
@@ -84,6 +86,7 @@ const works = ref([
   },
   {
     title: '麗臺科技大數據 Leadtek Bigdata',
+    icon: '/images/logo/leadtek.png',
     description: `
 高級工程師 2020-04 - Now
 為公部門提供大數據分析及 AI 預測服務，以及完成兩個產品開發。主要負責大部分案子的前端網站工程，期間為部門建立許多內部 DevOps, 開發流程以及技術迭代，並實踐在產品開發中。
@@ -124,28 +127,15 @@ const works = ref([
   {
     // cover: '/images/myproguide.png',
     title: '貓罐子 BottleNeko',
+    icon: '/images/logo/bottleneko.png',
     description: `
 創辦人 2021-05
 一款名為 Weiβ Schwarz (黑白雙翼 WS) TCG 卡牌遊戲的工具網站，提供卡片翻譯、組牌系統、卡片查詢、牌組分享...等工具服務。
 原先作為我自己的 Side Project，但於 2022 年使用人數已高達 10 萬人，已然成為該遊戲在台灣內最大的網站。
 `,
     link: 'https://bottleneko.app',
-    size: 'md:col-span-4',
+    size: 'md:col-span-2',
   },
-
-  {
-    title: '從前從前',
-    description: `
-創辦人 2019-11
-榮獲 Apple 台灣區 APP 移動應用創新賽 特獎
-榮獲 Apple 中華區 Mobile APP Innovation Contest 一等獎、Best Demo 獎
-
-一款作為創作故事的 App，能夠讓親子一同互動並且創作屬於自己的故事。
-     `,
-    link: 'https://once-upon-a-time.jasonxddd.me/',
-    size: 'md:col-span-4',
-  },
-
   {
     cover: '/images/auto-factory.png',
     title: '自動化工廠',
@@ -167,6 +157,7 @@ Freelancer 2020-03
     more: `使用 Angular 10 建置，重點技術：電路訊號分析、Web Notification、PWA。`,
     size: 'md:col-span-1',
   },
+
   {
     cover: '/images/diet-calendar.png',
     title: '我的健康日誌',
@@ -186,6 +177,19 @@ Side Project 2022-07
      `,
     size: 'md:col-span-1',
     link: 'https://jasonxddd.github.io/figure-stage/',
+  },
+  {
+    title: '從前從前',
+    icon: '/images/logo/onceuponatime.png',
+    description: `
+創辦人 2019-11
+榮獲 Apple 台灣區 APP 移動應用創新賽 特獎
+榮獲 Apple 中華區 Mobile APP Innovation Contest 一等獎、Best Demo 獎
+
+一款作為創作故事的 App，能夠讓親子一同互動並且創作屬於自己的故事。
+     `,
+    link: 'https://once-upon-a-time.jasonxddd.me/',
+    size: 'md:col-span-2',
   },
 ])
 
