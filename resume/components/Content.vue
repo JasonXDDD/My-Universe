@@ -43,48 +43,6 @@ import moment from 'moment'
 
 const works = ref([
   {
-    // cover: '/images/myproguide.png',
-    title: 'MyProGuide',
-    icon: '/images/logo/myproguide.png',
-    description: `
-技術負責人 2017-05 - 2019-08
-一家作為導遊訓練及派遣的新創公司，主要負責所有系統及平台建置，包括電商網站、ERP、導遊平台... 等等。
-`,
-    link: 'https://www.myproguide.com',
-    size: 'md:col-span-4',
-  },
-  {
-    cover: '/images/myproguide-tour.png',
-    title: '旅遊電商平台',
-    description: `提供旅客購買行程以及導遊上架的平台。`,
-    more: `使用 Vue Nuxt 建置在 AWS EC2 上，重點技術：金流、SEO、PWA。`,
-    link: 'https://tour.myproguide.com',
-    size: 'md:col-span-1',
-  },
-  {
-    cover: '/images/myproguide-dashboard.png',
-    title: '管理後台',
-    description: `提供所有使用者身份進行訂單管理、網站設定的後台。`,
-    more: `使用 Angular 8 建置在 AWS EC2 上，重點技術：金流、訂單狀態、資料視覺化。`,
-    size: 'md:col-span-1',
-  },
-  {
-    cover: '/images/myproguide.png',
-    title: '導遊社群及部落格',
-    description: `導遊的社群平台，讓旅客在上面填寫評價、以及撰寫部落格文章。`,
-    more: `使用 Angular 8, WrodPress 建置在 AWS EC2 上，重點技術：SEO、SPA。`,
-    link: 'https://www.myproguide.com/guide/list',
-    size: 'md:col-span-1',
-  },
-  {
-    cover: '/images/myproguide-customize.png',
-    title: '旅客客製行程平台',
-    description: `專為高級旅客架設的客製旅遊，可以根據自己喜好設計旅遊，並讓導遊們可以進行搶標報價。`,
-    more: `使用 Angular 8 建置在 AWS EC2 上，重點技術：訂單流程、搶標系統、SEO、SPA。`,
-    link: 'https://customize.myproguide.com',
-    size: 'md:col-span-1',
-  },
-  {
     title: '麗臺科技大數據 Leadtek Bigdata',
     icon: '/images/logo/leadtek.png',
     description: `
@@ -136,6 +94,70 @@ const works = ref([
     link: 'https://bottleneko.app',
     size: 'md:col-span-2',
   },
+
+  {
+    cover: '/images/diet-calendar.png',
+    title: '我的健康日誌',
+    description: `
+Side Project 2020-03
+當時勤奮健身，為了記錄飲食開發出來的網站，但後來就失去意志的 ><
+     `,
+    size: 'md:col-span-1',
+  },
+
+  {
+    cover: '/images/figurestage.png',
+    title: 'FigureStage 展示舞台',
+    description: `
+Side Project 2022-07
+自從我有了 3D 列印機之後，我有了搜集模型、手辦的嗜好，於是開發出一個展示網站來好好欣賞。
+     `,
+    size: 'md:col-span-1',
+    link: 'https://jasonxddd.github.io/figure-stage/',
+  },
+  {
+    // cover: '/images/myproguide.png',
+    title: 'MyProGuide',
+    icon: '/images/logo/myproguide.png',
+    description: `
+技術負責人 2017-05 - 2019-08
+一家作為導遊訓練及派遣的新創公司，主要負責所有系統及平台建置，包括電商網站、ERP、導遊平台... 等等。
+`,
+    link: 'https://www.myproguide.com',
+    size: 'md:col-span-4',
+  },
+  {
+    cover: '/images/myproguide-tour.png',
+    title: '旅遊電商平台',
+    description: `提供旅客購買行程以及導遊上架的平台。`,
+    more: `使用 Vue Nuxt 建置在 AWS EC2 上，重點技術：金流、SEO、PWA。`,
+    link: 'https://tour.myproguide.com',
+    size: 'md:col-span-1',
+  },
+  {
+    cover: '/images/myproguide-dashboard.png',
+    title: '管理後台',
+    description: `提供所有使用者身份進行訂單管理、網站設定的後台。`,
+    more: `使用 Angular 8 建置在 AWS EC2 上，重點技術：金流、訂單狀態、資料視覺化。`,
+    size: 'md:col-span-1',
+  },
+  {
+    cover: '/images/myproguide.png',
+    title: '導遊社群及部落格',
+    description: `導遊的社群平台，讓旅客在上面填寫評價、以及撰寫部落格文章。`,
+    more: `使用 Angular 8, WrodPress 建置在 AWS EC2 上，重點技術：SEO、SPA。`,
+    link: 'https://www.myproguide.com/guide/list',
+    size: 'md:col-span-1',
+  },
+  {
+    cover: '/images/myproguide-customize.png',
+    title: '旅客客製行程平台',
+    description: `專為高級旅客架設的客製旅遊，可以根據自己喜好設計旅遊，並讓導遊們可以進行搶標報價。`,
+    more: `使用 Angular 8 建置在 AWS EC2 上，重點技術：訂單流程、搶標系統、SEO、SPA。`,
+    link: 'https://customize.myproguide.com',
+    size: 'md:col-span-1',
+  },
+
   {
     cover: '/images/auto-factory.png',
     title: '自動化工廠',
@@ -158,26 +180,6 @@ Freelancer 2020-03
     size: 'md:col-span-1',
   },
 
-  {
-    cover: '/images/diet-calendar.png',
-    title: '我的健康日誌',
-    description: `
-Side Project 2020-03
-當時勤奮健身，為了記錄飲食開發出來的網站，但後來就失去意志的 ><
-     `,
-    size: 'md:col-span-1',
-  },
-
-  {
-    cover: '/images/figurestage.png',
-    title: 'FigureStage 展示舞台',
-    description: `
-Side Project 2022-07
-自從我有了 3D 列印機之後，我有了搜集模型、手辦的嗜好，於是開發出一個展示網站來好好欣賞。
-     `,
-    size: 'md:col-span-1',
-    link: 'https://jasonxddd.github.io/figure-stage/',
-  },
   {
     title: '從前從前',
     icon: '/images/logo/onceuponatime.png',
